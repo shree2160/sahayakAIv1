@@ -1,0 +1,19 @@
+# Render.com Deployment Configuration
+# ====================================
+# This file configures deployment on render.com (free tier)
+
+services:
+  - type: web
+    name: sahayak-ai-backend
+    env: docker
+    region: singapore  # Closest to India
+    plan: free
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false  # Set manually in dashboard
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+    autoDeploy: true
+    healthCheckPath: /health
