@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sahayak AI - Voice-enabled assistant for everyday India. Ask questions in Hindi about mobile recharge, government forms, nearby services and more.">
+    <meta name="keywords" content="AI assistant, Hindi, voice, India, helper, सहायक">
+    <meta name="author" content="Sahayak AI Team">
+    
+    <title>Sahayak AI - सहायक AI | Voice Assistant for India</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🙏</text></svg>">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🙏</span>
+                <div class="logo-text">
+                    <h1>Sahayak AI</h1>
+                    <p class="tagline">आपका डिजिटल सहायक</p>
+                </div>
+            </div>
+            <div class="status-indicator" id="statusIndicator">
+                <span class="status-dot"></span>
+                <span class="status-text">Connecting...</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Chat Container -->
+            <div class="chat-container" id="chatContainer">
+                <!-- Welcome Message -->
+                <div class="message assistant-message welcome-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <p class="message-text">
+                            <strong>नमस्ते! 🙏</strong><br><br>
+                            मैं सहायक AI हूं। आप मुझसे हिंदी या English में पूछ सकते हैं:<br><br>
+                            • 📱 "मोबाइल रिचार्ज कैसे करें?"<br>
+                            • 📋 "आधार कार्ड कैसे अपडेट करें?"<br>
+                            • 🏥 "नजदीकी अस्पताल कहां है?"<br>
+                            • 🏦 "बैंक अकाउंट कैसे खोलें?"<br><br>
+                            <em>माइक बटन दबाकर बोलें या नीचे टाइप करें।</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <!-- Quick Actions -->
+                <div class="quick-actions" id="quickActions">
+                    <button class="quick-btn" data-query="मोबाइल रिचार्ज कैसे करें?">📱 Mobile Recharge</button>
+                    <button class="quick-btn" data-query="नजदीकी अस्पताल कहां है?">🏥 Nearby Hospital</button>
+                    <button class="quick-btn" data-query="आधार कार्ड अपडेट कैसे करें?">🆔 Aadhaar Update</button>
+                    <button class="quick-btn" data-query="पैन कार्ड कैसे बनवाएं?">💳 PAN Card</button>
+                </div>
+
+                <!-- Input Controls -->
+                <div class="input-controls">
+                    <div class="text-input-wrapper">
+                        <input 
+                            type="text" 
+                            id="textInput" 
+                            class="text-input" 
+                            placeholder="अपना सवाल यहाँ लिखें..."
+                            autocomplete="off"
+                        >
+                        <button class="send-btn" id="sendBtn" title="Send">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <button class="mic-btn" id="micBtn" title="Voice Input">
+                        <svg class="mic-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+                            <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+                        </svg>
+                        <svg class="stop-icon hidden" viewBox="0 0 24 24" fill="currentColor">
+                            <rect x="6" y="6" width="12" height="12" rx="2"/>
+                        </svg>
+                        <div class="recording-pulse"></div>
+                    </button>
+                </div>
+
+                <!-- Recording Status -->
+                <div class="recording-status hidden" id="recordingStatus">
+                    <div class="recording-indicator">
+                        <span class="recording-dot"></span>
+                        <span class="recording-text">सुन रहा हूं... बोलिए</span>
+                    </div>
+                    <div class="audio-visualizer" id="audioVisualizer">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with ❤️ for India | <a href="https://github.com/sahayak-ai" target="_blank">Open Source</a></p>
+            <div class="location-info" id="locationInfo">
+                <span>📍 Location: Detecting...</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Audio Player (Hidden) -->
+    <audio id="audioPlayer" style="display: none;"></audio>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay hidden" id="loadingOverlay">
+        <div class="loader">
+            <div class="loader-spinner"></div>
+            <p>सोच रहा हूं...</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="recorder.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

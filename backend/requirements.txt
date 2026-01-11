@@ -1,0 +1,26 @@
+# Sahayak AI - Backend Dependencies
+# ==================================
+# Install with: pip install -r requirements.txt
+
+# Core Framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-dotenv>=1.0.0
+pydantic>=2.5.0
+gunicorn>=21.2.0
+
+# Speech Processing
+vosk>=0.3.45
+
+# AI/ML
+google-generativeai>=0.3.0
+
+# Database - Supabase (version 1.x works on Windows without C++ build tools)
+supabase==1.2.0
+
+# HTTP Client (compatible with supabase 1.2.0)
+httpx>=0.24.0,<0.25.0
+
+# File Handling
+python-multipart>=0.0.6
+aiofiles>=23.2.1

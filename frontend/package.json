@@ -1,0 +1,17 @@
+{
+    "name": "sahayak-ai-frontend",
+    "version": "1.0.0",
+    "description": "Sahayak AI - Voice-Enabled Assistant Frontend",
+    "scripts": {
+        "start": "npx serve .",
+        "dev": "npx live-server --port=3000"
+    },
+    "keywords": [
+        "voice-assistant",
+        "hindi",
+        "india",
+        "ai"
+    ],
+    "author": "Sahayak AI Team",
+    "license": "MIT"
+}
